@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.edogen.tests
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Aljoschability
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.emf.ecore.xmi,
+ org.eclipse.xtend.lib,
+ org.junit,
+ com.aljoschability.eclipse.tools.edogen

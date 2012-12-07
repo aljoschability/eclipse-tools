@@ -1,0 +1,240 @@
+\section{Package \texttt{core}}
+\label{api:core.ecore:}
+The core package is the root package for the storydriven core meta-model. It defines several abstract super classes which implement an extension mechanism as well as recurring structural features like, e.g., names of elements. The classes in this package are intended to be sub-classed by any meta-model element.
+\begin{description}
+\item[Namespace] \texttt{http://www.storydriven.org/core/0.3.1}
+\end{description}
+\subsection{Abstract Class \texttt{CommentableElement}}
+\label{api:core.ecore::CommentableElement}
+Abstract super class for all meta-model elements that may carry a comment in form of a string.
+\subsubsection*{Subclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:Expression]{\texttt{Expression} (see section \ref*{api:core.ecore::expressions:Expression} on page \pageref*{api:core.ecore::expressions:Expression})}
+\end{itemize}
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::ExtendableElement]{\texttt{ExtendableElement} (see section \ref*{api:core.ecore::ExtendableElement} on page \pageref*{api:core.ecore::ExtendableElement})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{comment~:~EString}] The comment string that can be used to attach arbitrary information to \hyperref[CommentableElement]{\texttt{CommentableElement}}s.
+\end{description}
+\subsection{Abstract Class \texttt{ExtendableElement}}
+\label{api:core.ecore::ExtendableElement}
+Abstract base class for the whole story diagram model. The \hyperref[ExtendableElement]{\texttt{ExtendableElement}} specifies the extension mechanism that can be used to extend an object by an \hyperref[Extension]{\texttt{Extension}} containing additional attributes and references.
+\subsubsection*{Subclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::CommentableElement]{\texttt{CommentableElement} (see section \ref*{api:core.ecore::CommentableElement} on page \pageref*{api:core.ecore::CommentableElement})}
+\item \hyperref[api:core.ecore::Extension]{\texttt{Extension} (see section \ref*{api:core.ecore::Extension} on page \pageref*{api:core.ecore::Extension})}
+\item \hyperref[api:core.ecore::NamedElement]{\texttt{NamedElement} (see section \ref*{api:core.ecore::NamedElement} on page \pageref*{api:core.ecore::NamedElement})}
+\item \hyperref[api:core.ecore::TypedElement]{\texttt{TypedElement} (see section \ref*{api:core.ecore::TypedElement} on page \pageref*{api:core.ecore::TypedElement})}
+\end{itemize}
+\subsubsection*{Operations}
+\begin{description}
+\item[\texttt{getExtension() : Extension}] \textcolor{red}{No detailed documentation provided.}
+\item[\texttt{provideExtension() : Extension}] \textcolor{red}{No detailed documentation provided.}
+\item[\texttt{getAnnotation(EString) : }] \textcolor{red}{No detailed documentation provided.}
+\item[\texttt{provideAnnotation(EString) : }] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsubsection*{Containments}
+\begin{description}
+\item[annotation : ] \textcolor{red}{No detailed documentation provided.}
+\item[extension : Extension] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsection{Abstract Class \texttt{Extension}}
+\label{api:core.ecore::Extension}
+Abstract super class for an \hyperref[Extension]{\texttt{Extension}} that can be defined for an object.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::ExtendableElement]{\texttt{ExtendableElement} (see section \ref*{api:core.ecore::ExtendableElement} on page \pageref*{api:core.ecore::ExtendableElement})}
+\end{itemize}
+\subsubsection*{References}
+\begin{description}
+\item[base : ] \textcolor{red}{No detailed documentation provided.}
+\item[modelBase : ] \textcolor{red}{No detailed documentation provided.}
+\item[owningAnnotation : ] \textcolor{red}{No detailed documentation provided.}
+\item[extendableBase : ExtendableElement] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsection{Abstract Class \texttt{NamedElement}}
+\label{api:core.ecore::NamedElement}
+Abstract super class for all meta-model elements that carry a name. 
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::ExtendableElement]{\texttt{ExtendableElement} (see section \ref*{api:core.ecore::ExtendableElement} on page \pageref*{api:core.ecore::ExtendableElement})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{name~:~EString}] The name attribute of a meta-model element.
+\end{description}
+\subsection{Abstract Class \texttt{TypedElement}}
+\label{api:core.ecore::TypedElement}
+Abstract super class for all meta-model elements that are typed by means of an \hyperref[EClassifier]{\texttt{EClassifier}} or an \hyperref[EGenericType]{\texttt{EGenericType}}.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::ExtendableElement]{\texttt{ExtendableElement} (see section \ref*{api:core.ecore::ExtendableElement} on page \pageref*{api:core.ecore::ExtendableElement})}
+\end{itemize}
+\subsubsection*{Containments}
+\begin{description}
+\item[genericType : ] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsubsection*{References}
+\begin{description}
+\item[type : ] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\section{Package \texttt{core::expressions}}
+\label{api:core.ecore::expressions}
+The base package for all expressions which can be used for modeling activities and patterns.
+\begin{description}
+\item[Namespace] \texttt{http://www.storydriven.org/core/expressions/0.3.1}
+\item[Prefix] \texttt{expr}
+\end{description}
+\subsection{Abstract Class \texttt{Expression}}
+\label{api:core.ecore::expressions:Expression}
+Represents any expression in an embedded textual language, e.g. OCL or Java. An expression's type is dynamically derived by an external mechanism (see \hyperref[TypedElement]{\texttt{TypedElement}}).
+\subsubsection*{Subclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:TextualExpression]{\texttt{TextualExpression} (see section \ref*{api:core.ecore::expressions:TextualExpression} on page \pageref*{api:core.ecore::expressions:TextualExpression})}
+\item \hyperref[api:core.ecore::expressions:common:UnaryExpression]{\texttt{UnaryExpression} (see section \ref*{api:core.ecore::expressions:common:UnaryExpression} on page \pageref*{api:core.ecore::expressions:common:UnaryExpression})}
+\item \hyperref[api:core.ecore::expressions:common:BinaryExpression]{\texttt{BinaryExpression} (see section \ref*{api:core.ecore::expressions:common:BinaryExpression} on page \pageref*{api:core.ecore::expressions:common:BinaryExpression})}
+\item \hyperref[api:core.ecore::expressions:common:LiteralExpression]{\texttt{LiteralExpression} (see section \ref*{api:core.ecore::expressions:common:LiteralExpression} on page \pageref*{api:core.ecore::expressions:common:LiteralExpression})}
+\end{itemize}
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::CommentableElement]{\texttt{CommentableElement} (see section \ref*{api:core.ecore::CommentableElement} on page \pageref*{api:core.ecore::CommentableElement})}
+\end{itemize}
+\subsection{Class \texttt{TextualExpression}}
+\label{api:core.ecore::expressions:TextualExpression}
+Represents any expression in a textual language embedded into Story Diagrams, e.g. OCL or Java .
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:Expression]{\texttt{Expression} (see section \ref*{api:core.ecore::expressions:Expression} on page \pageref*{api:core.ecore::expressions:Expression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{expressionText~:~EString}] Holds the expression, e.g. in OCL or Java.
+\item[\texttt{language~:~EString}] String representation of the used language which has to be unique. Examples are OCL and Java.
+\item[\texttt{languageVersion~:~EString}] String representation of the used language's version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]. Examples: \texttt{1.4} or \texttt{3.0.1} or \texttt{1.0.2.20101208}.
+\end{description}
+\section{Package \texttt{core::expressions::common}}
+\label{api:core.ecore::expressions:common}
+\textcolor{red}{No detailed documentation provided.}
+\begin{description}
+\item[Namespace] \texttt{http://www.storydriven.org/core/expressions/common/0.3.1}
+\item[Prefix] \texttt{sdcec}
+\end{description}
+\subsection{Enumeration \texttt{LogicOperator}}
+Defines the operators for binary logic expressions. The unary logic expression representing negated expressions is reflected by the \hyperref[NotExpression]{\texttt{NotExpression}}.
+\begin{description}
+\item[AND] \textcolor{red}{No detailed documentation provided.}
+\item[OR] \textcolor{red}{No detailed documentation provided.}
+\item[XOR] \textcolor{red}{No detailed documentation provided.}
+\item[IMPLY] \textcolor{red}{No detailed documentation provided.}
+\item[EQUIVALENT] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsection{Enumeration \texttt{ComparingOperator}}
+Defines the operators for comparing expressions.
+\begin{description}
+\item[LESS] \textcolor{red}{No detailed documentation provided.}
+\item[LESS\_OR\_EQUAL] \textcolor{red}{No detailed documentation provided.}
+\item[EQUAL] \textcolor{red}{No detailed documentation provided.}
+\item[GREATER\_OR\_EQUAL] \textcolor{red}{No detailed documentation provided.}
+\item[GREATER] \textcolor{red}{No detailed documentation provided.}
+\item[UNEQUAL] \textcolor{red}{No detailed documentation provided.}
+\item[REGULAR\_EXPRESSION] For comparison of a String with a regular expression.
+\end{description}
+\subsection{Enumeration \texttt{ArithmeticOperator}}
+Defines the operators for arithmetic expressions.
+\begin{description}
+\item[PLUS] \textcolor{red}{No detailed documentation provided.}
+\item[MINUS] \textcolor{red}{No detailed documentation provided.}
+\item[TIMES] \textcolor{red}{No detailed documentation provided.}
+\item[DIVIDE] \textcolor{red}{No detailed documentation provided.}
+\item[MODULO] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsection{Enumeration \texttt{UnaryOperator}}
+\textcolor{red}{No detailed documentation provided.}
+\begin{description}
+\item[NOT] \textcolor{red}{No detailed documentation provided.}
+\item[PLUS] \textcolor{red}{No detailed documentation provided.}
+\item[MINUS] \textcolor{red}{No detailed documentation provided.}
+\item[INCREMENT] \textcolor{red}{No detailed documentation provided.}
+\item[DECREMENT] \textcolor{red}{No detailed documentation provided.}
+\end{description}
+\subsection{Class \texttt{UnaryExpression}}
+\label{api:core.ecore::expressions:common:UnaryExpression}
+Represents an unary expression.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:Expression]{\texttt{Expression} (see section \ref*{api:core.ecore::expressions:Expression} on page \pageref*{api:core.ecore::expressions:Expression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{operator~:~UnaryOperator}] Represents the operator of the expression.
+\end{description}
+\subsubsection*{Containments}
+\begin{description}
+\item[enclosedExpression : Expression] Represents the operand of a \hyperref[NotExpression]{\texttt{NotExpression}}, e.g. \texttt{a < 5} in \texttt{NOT(a < 5)}.
+\end{description}
+\subsection{Abstract Class \texttt{BinaryExpression}}
+\label{api:core.ecore::expressions:common:BinaryExpression}
+Represents any binary expression like \texttt{v < 5} or \texttt{x + 7}.
+\subsubsection*{Subclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:common:ComparisonExpression]{\texttt{ComparisonExpression} (see section \ref*{api:core.ecore::expressions:common:ComparisonExpression} on page \pageref*{api:core.ecore::expressions:common:ComparisonExpression})}
+\item \hyperref[api:core.ecore::expressions:common:ArithmeticExpression]{\texttt{ArithmeticExpression} (see section \ref*{api:core.ecore::expressions:common:ArithmeticExpression} on page \pageref*{api:core.ecore::expressions:common:ArithmeticExpression})}
+\item \hyperref[api:core.ecore::expressions:common:LogicalExpression]{\texttt{LogicalExpression} (see section \ref*{api:core.ecore::expressions:common:LogicalExpression} on page \pageref*{api:core.ecore::expressions:common:LogicalExpression})}
+\end{itemize}
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:Expression]{\texttt{Expression} (see section \ref*{api:core.ecore::expressions:Expression} on page \pageref*{api:core.ecore::expressions:Expression})}
+\end{itemize}
+\subsubsection*{Containments}
+\begin{description}
+\item[leftExpression : Expression] Represents the first operand of a binary expression, e.g. x in the expression \texttt{x < 5}.
+\item[rightExpression : Expression] Represents the second operand of a binary expression, e.g. \texttt{5} in the expression \texttt{x < 5}.
+\end{description}
+\subsection{Class \texttt{ComparisonExpression}}
+\label{api:core.ecore::expressions:common:ComparisonExpression}
+Represents comparing expressions like \texttt{a < 5} or \texttt{a >= 7}.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:common:BinaryExpression]{\texttt{BinaryExpression} (see section \ref*{api:core.ecore::expressions:common:BinaryExpression} on page \pageref*{api:core.ecore::expressions:common:BinaryExpression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{operator~:~ComparingOperator}] Specifies the expression's comparing operator, e.g. \texttt{<}, \texttt{>=}, \texttt{!=}.
+\end{description}
+\subsection{Class \texttt{ArithmeticExpression}}
+\label{api:core.ecore::expressions:common:ArithmeticExpression}
+Represents arithmetic expressions like \texttt{a + 5} or \texttt{a * 7}.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:common:BinaryExpression]{\texttt{BinaryExpression} (see section \ref*{api:core.ecore::expressions:common:BinaryExpression} on page \pageref*{api:core.ecore::expressions:common:BinaryExpression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{operator~:~ArithmeticOperator}] Specifies the expression's arithmetic operator, e.g. \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, or \texttt{MODULO}.
+\end{description}
+\subsection{Class \texttt{LogicalExpression}}
+\label{api:core.ecore::expressions:common:LogicalExpression}
+Represents binary, logic expressions like \texttt{a AND b} and \texttt{a OR b}.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:common:BinaryExpression]{\texttt{BinaryExpression} (see section \ref*{api:core.ecore::expressions:common:BinaryExpression} on page \pageref*{api:core.ecore::expressions:common:BinaryExpression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{operator~:~LogicOperator}] Specifies the expression's logic operator, e.g. \texttt{AND}, \texttt{OR}, or \texttt{XOR}.
+\end{description}
+\subsection{Class \texttt{LiteralExpression}}
+\label{api:core.ecore::expressions:common:LiteralExpression}
+Represents any literal, i.e. a value whose type is an \hyperref[EDataType]{\texttt{EDataType}}. Literals are, for example, \texttt{5}, \texttt{3.14}, \texttt{'c'}, \texttt{"text"}, \texttt{true}.
+\subsubsection*{Superclasses}
+\begin{itemize}
+\item \hyperref[api:core.ecore::expressions:Expression]{\texttt{Expression} (see section \ref*{api:core.ecore::expressions:Expression} on page \pageref*{api:core.ecore::expressions:Expression})}
+\end{itemize}
+\subsubsection*{Attributes}
+\begin{description}
+\item[\texttt{value~:~EString}] String representation of the value, e.g. "5", "3.14", "c", "text", or "true".
+\end{description}
+

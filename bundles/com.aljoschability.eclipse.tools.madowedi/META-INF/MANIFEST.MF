@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Markdown Tools
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.mumade;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Aljoschability
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime,
+ com.aljoschability.eclipse.core.runtime
+Bundle-Activator: com.aljoschability.eclipse.tools.mumade.Activator
+Export-Package: com.aljoschability.eclipse.tools.mumade,
+ com.aljoschability.eclipse.tools.mumade.impl

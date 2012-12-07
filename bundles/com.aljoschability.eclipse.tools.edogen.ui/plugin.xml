@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+
+<!--
+ <copyright>
+ 	Copyright 2012 by Aljoschability and others. All rights reserved. This program and its materials are made
+ 	available under the terms of the Eclipse Public License v1.0 which is referenced in this distribution.
+ 
+ 	Contributors:
+ 		Aljoscha Hark <aljoscha@aljoschability.com> - Initial code
+ 
+ </copyright>
+ 
+ $Id$
+-->
+
+<plugin>
+
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?before=additions">
+			<command
+			  commandId="com.aljoschability.tools.docgen.ui.commands.generate"
+			  label="Generate Documentation..."
+			  style="push">
+				<visibleWhen checkEnabled="false">
+					<with variable="selection">
+						<iterate ifEmpty="false" operator="and">
+							<instanceof value="org.eclipse.core.resources.IFile"></instanceof>
+							<or>
+								<test property="org.eclipse.core.resources.extension" value="ecore"></test>
+								<test property="org.eclipse.core.resources.extension" value="uml"></test>
+								<test property="org.eclipse.core.resources.extension" value="xcore"></test>
+							</or>
+						</iterate>
+						<count value="1"></count>
+					</with>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution allPopups="false" locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?before=additions">
+			<separator
+			   name="com.aljoschability.tools.docgen.ui.commands.generate.separator"
+			   visible="true"></separator>
+			<command
+			   commandId="com.aljoschability.tools.docgen.ui.commands.generate"
+			   label="Generate Documentation..."
+			   style="push">
+				<visibleWhen checkEnabled="false">
+					<with variable="selection">
+						<iterate ifEmpty="false" operator="and">
+							<instanceof value="org.eclipse.core.resources.IFile"></instanceof>
+							<or>
+								<test property="org.eclipse.core.resources.extension" value="ecore"></test>
+								<test property="org.eclipse.core.resources.extension" value="uml"></test>
+								<test property="org.eclipse.core.resources.extension" value="xcore"></test>
+							</or>
+						</iterate>
+						<count value="1"></count>
+					</with>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.aljoschability.tools.docgen.ui.handlers.GenerateDocumentationHandler"
+            id="com.aljoschability.tools.docgen.ui.commands.generate"
+            name="Generate Documentation...">
+      </command>
+   </extension>
+
+</plugin>

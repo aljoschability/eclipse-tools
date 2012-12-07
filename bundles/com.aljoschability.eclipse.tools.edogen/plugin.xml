@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+
+<!--
+ <copyright>
+ 	Copyright 2011 by Aljoschability and others. All rights reserved. This program and its materials are made
+ 	available under the terms of the Eclipse Public License v1.0 which is referenced in this distribution.
+ 
+ 	Contributors:
+ 		Aljoscha Hark <aljoscha@aljoschability.com> - Initial code
+ 
+ </copyright>
+ 
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="generator" name="Documentation Generator" schema="schema/generator.exsd"/>
+   <extension
+         point="com.aljoschability.eclipse.tools.edogen.generator">
+      <generator
+            class="com.aljoschability.eclipse.tools.edogen.impl.HtmlDocumentationGenerator"
+            extension="html"
+            id="html"
+            name="HTML">
+      </generator>
+      <generator
+            class="com.aljoschability.eclipse.tools.edogen.impl.MarkdownDocumentationGenerator"
+            extension="md"
+            id="markdown"
+            name="Markdown">
+      </generator>
+      <generator
+            class="com.aljoschability.eclipse.tools.edogen.impl.LatexDocumentationGenerator"
+            extension="latex"
+            id="latex"
+            name="LaTeX">
+      </generator>
+   </extension>
+</plugin>

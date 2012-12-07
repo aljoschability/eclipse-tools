@@ -1,0 +1,36 @@
+\documentclass[10pt,a4paper,parskip=half]{scrartcl}
+
+% add packages
+\usepackage[utf8]{inputenc}		% use modern file encoding
+
+\usepackage{lmodern}			% trying to use non-bitmap fonts
+\usepackage[T1]{fontenc}		% using font encoding that use more than 7 bits
+
+\usepackage{graphicx}			% be able to include graphics
+\usepackage{color}				% use colored text
+\usepackage[right]{eurosym}		% use euro-symbol by \EUR{1.99} or \euro{1.99}
+\usepackage[english]{babel}		% use babel
+
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+
+\usepackage{setspace}			% use line height corrections by \begin{setspace}
+
+\usepackage{hyperref}			% enhanced PDF things
+
+% definitions
+\input{_custom}
+
+% configure complex packages
+\hypersetup{
+	pdftitle={\metaTitle},
+	pdfsubject={\metaSubject},
+	pdfauthor={\metaAuthor},
+	citecolor=hyperlinked,
+	linkcolor=hyperlinked,
+	urlcolor=hyperlinked,
+	colorlinks=true,
+	pdfpagemode=UseNone,
+	bookmarksopen=true,
+	plainpages=false
+}

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Documentation Generator User Interface
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.edogen.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: com.aljoschability.tools.docgen.ui.Activator
+Bundle-Vendor: Aljoschability
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.ui,
+ org.eclipse.xtend.lib,
+ com.aljoschability.eclipse.tools.edogen
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+ <extension point="org.eclipse.ui.views">
+    <view
+          allowMultiple="false"
+          category="org.eclipse.pde.ui"
+          class="com.aljoschability.eclipse.tools.bumauni.ui.views.OrganizeManifestsView"
+          icon="icons/header.png"
+          id="com.aljoschability.tools.mforg.ui.views.OrganizeManifestsView"
+          name="Manifest Organization"
+          restorable="true">
+    </view>
+    <e4view
+          allowMultiple="false"
+          category="org.eclipse.pde.ui"
+          class="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
+          icon="icons/header.png"
+          id="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
+          name="Headers"
+          restorable="true">
+    </e4view>
+ </extension>
+</plugin>
