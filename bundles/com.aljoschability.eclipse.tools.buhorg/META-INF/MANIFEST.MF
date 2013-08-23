@@ -23,5 +23,3 @@ Export-Package: com.aljoschability.eclipse.tools.buhorg,
  com.aljoschability.eclipse.tools.bumauni.data,
  com.aljoschability.eclipse.tools.bumauni.util
 Bundle-Activator: com.aljoschability.eclipse.tools.bumauni.Activator
-Service-Component: OSGI-INF/binding.xml,
- OSGI-INF/genericbindingprovider.xml

@@ -14,7 +14,7 @@
     <e4view
           allowMultiple="false"
           category="org.eclipse.pde.ui"
-          class="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
+          class="com.aljoschability.eclipse.tools.bumauni.ui.parts.BuhemaPart"
           icon="icons/header.png"
           id="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
           name="Headers"

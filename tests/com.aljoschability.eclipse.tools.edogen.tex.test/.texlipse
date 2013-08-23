@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Sun Oct 06 23:52:14 CEST 2013
+#Fri Aug 23 21:32:35 CEST 2013
 markTmpDer=true
 builderNum=2
 outputDir=target/
@@ -11,4 +11,4 @@ mainTexFile=document.tex
 outputFile=document.pdf
 langSpell=en
 markDer=true
-srcDir=src/
+srcDir=src/test/tex/
