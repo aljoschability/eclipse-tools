@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Metadata File Organizer UI
-Bundle-SymbolicName: com.aljoschability.eclipse.tools.buhorg.ui;singleton:=true
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.promato.ui;singleton:=true
 Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: Aljoschability
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -15,7 +15,7 @@ Require-Bundle: com.google.guava,
  org.eclipse.xtext.xbase.lib,
  com.aljoschability.eclipse.core.runtime,
  com.aljoschability.eclipse.core.ui,
- com.aljoschability.eclipse.tools.buhorg,
+ com.aljoschability.eclipse.tools.promato,
  org.eclipse.jdt.ui,
  org.eclipse.e4.core.di;bundle-version="1.4.0",
  org.eclipse.e4.ui.di;bundle-version="1.0.0",

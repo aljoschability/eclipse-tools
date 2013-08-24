@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="com.aljoschability.eclipse.tools.buhorg.feature"
-      label="Bundle Header Organizer"
+      id="com.aljoschability.eclipse.tools.promato.feature"
+      label="Project Maintainance Tools"
       version="0.2.0.qualifier"
       provider-name="Aljoschability">
 
@@ -18,14 +18,14 @@
    </license>
 
    <plugin
-         id="com.aljoschability.eclipse.tools.buhorg"
+         id="com.aljoschability.eclipse.tools.promato"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="com.aljoschability.eclipse.tools.buhorg.ui"
+         id="com.aljoschability.eclipse.tools.promato.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
