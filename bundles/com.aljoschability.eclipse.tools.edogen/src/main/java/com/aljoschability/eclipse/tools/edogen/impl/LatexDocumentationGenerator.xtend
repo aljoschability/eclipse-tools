@@ -17,6 +17,13 @@ import org.eclipse.emf.ecore.ETypedElement
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtend2.lib.StringConcatenation
 
+/*
+ * TODO:
+ * <ul>
+ * <li>tex escape: '{', '}', '\', '$'
+ * <li>html escape: <a>,<strong>,<em>,<code>,<pre>,<p>
+ * </ul>
+ */
 class LatexDocumentationGenerator extends AbstractGenerator {
 	val TEXT_EXTENDS = "extends"
 

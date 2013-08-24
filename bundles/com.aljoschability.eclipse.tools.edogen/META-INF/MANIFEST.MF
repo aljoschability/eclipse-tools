@@ -11,4 +11,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy
-Export-Package: com.aljoschability.eclipse.tools.edogen
+Export-Package: com.aljoschability.eclipse.tools.edogen,
+ com.aljoschability.eclipse.tools.edogen.impl

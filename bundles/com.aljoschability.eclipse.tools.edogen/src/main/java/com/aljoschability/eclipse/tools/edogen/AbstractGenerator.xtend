@@ -1,22 +1,18 @@
 package com.aljoschability.eclipse.tools.edogen
 
-import java.util.Map
-import org.eclipse.emf.ecore.EClass
-import org.eclipse.emf.ecore.EModelElement
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.EPackage
-import org.eclipse.emf.ecore.EEnum
-import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EAttribute
-import org.eclipse.emf.ecore.EOperation
-import org.eclipse.emf.ecore.EReference
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.EEnum
 import org.eclipse.emf.ecore.EEnumLiteral
+import org.eclipse.emf.ecore.EModelElement
+import org.eclipse.emf.ecore.EOperation
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EReference
 
 abstract class AbstractGenerator implements Generator {
 	String EMPTY = ""
 	String NO_DOCUMENTATION = "No detailed documentation provided."
-
-	val Map<EObject, String> anchorCache = newLinkedHashMap()
 
 	def String raw_value(EModelElement element, String key) {
 		var annotation = element.getEAnnotation(Constants.SOURCE_EDOGEN);
