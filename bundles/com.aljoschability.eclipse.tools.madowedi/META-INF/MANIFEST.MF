@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Markdown Tools
-Bundle-SymbolicName: com.aljoschability.eclipse.tools.mumade;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Name: Markdown Editor
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.madowedi;singleton:=true
+Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: Aljoschability
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

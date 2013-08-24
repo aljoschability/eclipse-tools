@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.aljoschability.eclipse.tools.promato.feature_0.2.0.qualifier.jar" id="com.aljoschability.eclipse.tools.promato.feature" version="0.2.0.qualifier">
+      <category name="com.aljoschability.eclipse.tools"/>
+   </feature>
+   <feature url="features/com.aljoschability.eclipse.tools.edogen.feature_0.2.0.qualifier.jar" id="com.aljoschability.eclipse.tools.edogen.feature" version="0.2.0.qualifier">
+      <category name="com.aljoschability.eclipse.tools"/>
+   </feature>
+   <feature url="features/com.aljoschability.eclipse.tools.madowedi.feature_0.2.0.qualifier.jar" id="com.aljoschability.eclipse.tools.madowedi.feature" version="0.2.0.qualifier">
+      <category name="com.aljoschability.eclipse.tools"/>
+   </feature>
+   <category-def name="com.aljoschability.eclipse.tools" label="Eclipse Tools"/>
+</site>

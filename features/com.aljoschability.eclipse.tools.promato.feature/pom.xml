@@ -18,27 +18,7 @@
 		<version>0.2.0-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>
-	<artifactId>com.aljoschability.eclipse.tools.madowedi</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-				<version>${xtend.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/src/main/generated-xtend</outputDirectory>
-							<testOutputDirectory>${project.build.directory}/src/test/generated-xtend</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+  <artifactId>com.aljoschability.eclipse.tools.promato.feature</artifactId>
+  <packaging>eclipse-feature</packaging>
+
 </project>

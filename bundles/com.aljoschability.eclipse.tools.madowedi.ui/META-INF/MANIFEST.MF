@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Markdown Tools UI
-Bundle-SymbolicName: com.aljoschability.eclipse.tools.mumade.ui;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Name: Markdown Editor UI
+Bundle-SymbolicName: com.aljoschability.eclipse.tools.madowedi.ui;singleton:=true
+Bundle-Version: 0.2.0.qualifier
 Bundle-Activator: com.aljoschability.eclipse.tools.mumade.ui.Activator
 Bundle-Vendor: Aljoschability
 Require-Bundle: com.google.guava,
@@ -16,7 +16,7 @@ Require-Bundle: com.google.guava,
  org.eclipse.xtext.xbase.lib,
  com.aljoschability.eclipse.core.runtime,
  com.aljoschability.eclipse.core.ui,
- com.aljoschability.eclipse.tools.mumade
+ com.aljoschability.eclipse.tools.madowedi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 

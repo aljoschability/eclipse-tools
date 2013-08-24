@@ -1,23 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<!--
-<copyright>
-	Copyright 2013 by Aljoschability and others. All rights reserved. This
-	program and its materials are made available under the terms of the Eclipse
-	Public License v1.0 which is referenced inside the distribution.
-
-	Contributors:
-		Aljoscha Hark <aljoschability@gmail.com> - Initial code
-
-</copyright>
--->
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>com.aljoschability.eclipse.tools.edogen</artifactId>
-	<packaging>eclipse-plugin</packaging>
 	<parent>
-		<groupId>com.aljoschability.eclipse.tools</groupId>
-		<artifactId>com.aljoschability.eclipse.tools.parent</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<groupId>com.aljoschability.eclipse</groupId>
+		<artifactId>com.aljoschability.eclipse.tools.master</artifactId>
+		<version>0.2.0-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>
+	<artifactId>com.aljoschability.eclipse.tools.edogen</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/src/main/generated-xtend</outputDirectory>
+							<testOutputDirectory>${project.build.directory}/src/test/generated-xtend</testOutputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

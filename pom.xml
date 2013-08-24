@@ -1,17 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.aljoschability.eclipse.tools</groupId>
-	<artifactId>com.aljoschability.eclipse.tools.parent</artifactId>
+	<groupId>com.aljoschability.eclipse</groupId>
+	<artifactId>com.aljoschability.eclipse.tools.master</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho.version>0.20.0</tycho.version>
+		<tycho.version>0.21.0</tycho.version>
 		<xtend.version>2.6.0</xtend.version>
 	</properties>
 	<modules>
-		<module>bundles/com.aljoschability.eclipse.tools.bumauni</module>
-		<module>bundles/com.aljoschability.eclipse.tools.bumauni.ui</module>
+		<!-- bundles -->
+		<module>bundles/com.aljoschability.eclipse.tools.edogen</module>
+		<module>bundles/com.aljoschability.eclipse.tools.edogen.ui</module>
+		<module>bundles/com.aljoschability.eclipse.tools.madowedi</module>
+		<module>bundles/com.aljoschability.eclipse.tools.madowedi.ui</module>
+		<module>bundles/com.aljoschability.eclipse.tools.promato</module>
+		<module>bundles/com.aljoschability.eclipse.tools.promato.ui</module>
+
+		<!-- features -->
+		<module>features\com.aljoschability.eclipse.tools.edogen.feature</module>
+		<module>features\com.aljoschability.eclipse.tools.madowedi.feature</module>
+		<module>features\com.aljoschability.eclipse.tools.promato.feature</module>
+
+		<!-- repository -->
+		<module>repositories\com.aljoschability.eclipse.tools.repository</module>
+
+		<!-- tests -->
+		<module>tests\com.aljoschability.eclipse.tools.edogen.tests</module>
+		<module>tests\com.aljoschability.eclipse.tools.madowedi.tests</module>
+		<module>tests\com.aljoschability.eclipse.tools.promato.tests</module>
 	</modules>
 	<repositories>
 		<!-- add eclipse luna repository to resolve basic dependencies -->

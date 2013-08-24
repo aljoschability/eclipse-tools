@@ -1,19 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.aljoschability.eclipse.tools</groupId>
-		<artifactId>com.aljoschability.eclipse.tools.parent</artifactId>
+		<groupId>com.aljoschability.eclipse</groupId>
+		<artifactId>com.aljoschability.eclipse.tools.master</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>
-	<artifactId>com.aljoschability.eclipse.tools.bumauni</artifactId>
+	<artifactId>com.aljoschability.eclipse.tools.promato</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
-				<version>${xtend.version}</version>
+				<version>2.7.2</version>
 				<executions>
 					<execution>
 						<goals>
@@ -21,8 +21,8 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/src/main/xtend</outputDirectory>
-							<testOutputDirectory>${basedir}/src/test/xtend</testOutputDirectory>
+							<outputDirectory>${project.build.directory}/src/main/generated-xtend</outputDirectory>
+							<testOutputDirectory>${project.build.directory}/src/test/generated-xtend</testOutputDirectory>
 						</configuration>
 					</execution>
 				</executions>
