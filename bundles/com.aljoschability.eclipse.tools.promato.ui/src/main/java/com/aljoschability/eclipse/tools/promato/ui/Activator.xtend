@@ -14,9 +14,7 @@ final public class Activator extends AbstractActivator {
 		Activator::INSTANCE = this
 
 		// add images
-		addImage(Images.DOWN);
-		addImage(Images.UP);
-		addImage(Images.HEADER);
+		addImage(PromatoImages.HEADER);
 	}
 
 	override void dispose() {

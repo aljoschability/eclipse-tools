@@ -1,11 +1,12 @@
 package com.aljoschability.eclipse.tools.promato.ui.parts;
 
+import com.aljoschability.core.ui.CoreImages
 import com.aljoschability.eclipse.tools.promato.simple.data.Manifest
-import com.aljoschability.eclipse.tools.promato.ui.Images
-import com.aljoschability.eclipse.tools.promato.ui.providers.HeadersLabelProvider
-import com.aljoschability.eclipse.tools.promato.ui.providers.ProjectsLabelProvider
 import com.aljoschability.eclipse.tools.promato.simple.util.ManifestUtil
 import com.aljoschability.eclipse.tools.promato.simple.util.ProjectUtil
+import com.aljoschability.eclipse.tools.promato.ui.providers.HeadersLabelProvider
+import com.aljoschability.eclipse.tools.promato.ui.providers.ProjectsLabelProvider
+import java.lang.reflect.InvocationTargetException
 import java.util.Collections
 import java.util.List
 import java.util.Map
@@ -15,6 +16,8 @@ import org.eclipse.core.resources.IResourceChangeListener
 import org.eclipse.core.resources.IResourceDelta
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.jface.dialogs.ProgressMonitorDialog
 import org.eclipse.jface.layout.GridDataFactory
 import org.eclipse.jface.layout.GridLayoutFactory
 import org.eclipse.jface.viewers.ArrayContentProvider
@@ -38,12 +41,9 @@ import org.eclipse.swt.widgets.Label
 import org.eclipse.swt.widgets.Table
 import org.eclipse.ui.IViewSite
 import org.eclipse.ui.PartInitException
+import org.eclipse.ui.actions.WorkspaceModifyOperation
 import org.eclipse.ui.model.WorkbenchContentProvider
 import org.eclipse.ui.part.ViewPart
-import org.eclipse.ui.actions.WorkspaceModifyOperation
-import org.eclipse.core.runtime.IProgressMonitor
-import java.lang.reflect.InvocationTargetException
-import org.eclipse.jface.dialogs.ProgressMonitorDialog
 
 public class OrganizeManifestsView extends ViewPart {
 	private Composite mainComposite;
@@ -192,7 +192,7 @@ public class OrganizeManifestsView extends ViewPart {
 
 		upButton = new Button(buttonsComposite, SWT.PUSH);
 		upButton.setEnabled(false);
-		upButton.setImage(Images.getImage(Images.UP));
+		upButton.setImage(CoreImages::get(CoreImages::UP));
 		upButton.setToolTipText("Move the selected header(s) upwards");
 		upButton.addSelectionListener(
 			new SelectionAdapter() {
@@ -204,7 +204,7 @@ public class OrganizeManifestsView extends ViewPart {
 
 		downButton = new Button(buttonsComposite, SWT.PUSH);
 		downButton.setEnabled(false);
-		downButton.setImage(Images.getImage(Images.DOWN));
+		downButton.setImage(CoreImages::get(CoreImages::DOWN));
 		downButton.setToolTipText("Move the selected header(s) downwards");
 		downButton.addSelectionListener(
 			new SelectionAdapter() {
