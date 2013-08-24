@@ -1,0 +1,23 @@
+package com.aljoschability.eclipse.tools.promato
+
+class Manifest {
+	contains Header[1..*] headers
+}
+
+class Header {
+	String[1] name // Require-Bundle
+	String splitValue // ,
+	String splitAttribute // ;
+	contains Value[1..*] values
+}
+
+class Value {
+	String[1] value
+	contains Attribute[] attributes
+}
+
+class Attribute {
+	String name // visibility
+	String separator // :=
+	String value // reexport
+}

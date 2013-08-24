@@ -17,9 +17,14 @@ Require-Bundle: com.google.guava,
  org.eclipse.emf.ecore.xcore.lib;visibility:=reexport,
  com.aljoschability.eclipse.core.runtime,
  org.eclipse.emf.ecore.xcore;bundle-version="1.2.0"
-Export-Package: com.aljoschability.eclipse.tools.buhorg,
- com.aljoschability.eclipse.tools.buhorg.impl,
- com.aljoschability.eclipse.tools.buhorg.util,
- com.aljoschability.eclipse.tools.bumauni.data,
- com.aljoschability.eclipse.tools.bumauni.util
-Bundle-Activator: com.aljoschability.eclipse.tools.bumauni.Activator
+Export-Package: com.aljoschability.eclipse.tools.promato,
+ com.aljoschability.eclipse.tools.promato.impl,
+ com.aljoschability.eclipse.tools.promato.reading,
+ com.aljoschability.eclipse.tools.promato.reading.headers,
+ com.aljoschability.eclipse.tools.promato.reading.structs,
+ com.aljoschability.eclipse.tools.promato.simple,
+ com.aljoschability.eclipse.tools.promato.simple.data,
+ com.aljoschability.eclipse.tools.promato.simple.impl,
+ com.aljoschability.eclipse.tools.promato.simple.util,
+ com.aljoschability.eclipse.tools.promato.util
+Bundle-Activator: com.aljoschability.eclipse.tools.promato.simple.Activator

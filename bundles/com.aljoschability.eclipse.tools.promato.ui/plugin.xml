@@ -5,7 +5,7 @@
     <view
           allowMultiple="false"
           category="org.eclipse.pde.ui"
-          class="com.aljoschability.eclipse.tools.bumauni.ui.views.OrganizeManifestsView"
+          class="com.aljoschability.eclipse.tools.promato.ui.views.OrganizeManifestsView"
           icon="icons/header.png"
           id="com.aljoschability.tools.mforg.ui.views.OrganizeManifestsView"
           name="Manifest Organization"
@@ -14,7 +14,7 @@
     <e4view
           allowMultiple="false"
           category="org.eclipse.pde.ui"
-          class="com.aljoschability.eclipse.tools.bumauni.ui.parts.BuhemaPart"
+          class="com.aljoschability.eclipse.tools.promato.ui.parts.BuhemaPart"
           icon="icons/header.png"
           id="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
           name="Headers"

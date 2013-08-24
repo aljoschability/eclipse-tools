@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated buhema -->
+      <!-- @generated promato -->
       <package
-            uri="com.aljoschability.eclipse.tools.buhorg"
-            class="com.aljoschability.eclipse.tools.buhorg.BuhorgPackage"
-            genModel="model/buhema.xcore"/>
+            uri="com.aljoschability.eclipse.tools.promato"
+            class="com.aljoschability.eclipse.tools.promato.PromatoPackage"
+            genModel="model/promato.xcore"/>
    </extension>
 
 </plugin>
