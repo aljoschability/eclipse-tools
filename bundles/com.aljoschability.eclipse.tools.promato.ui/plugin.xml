@@ -2,22 +2,13 @@
 <?eclipse version="3.5"?>
 <plugin>
  <extension point="org.eclipse.ui.views">
-    <view
-          allowMultiple="false"
-          category="org.eclipse.pde.ui"
-          class="com.aljoschability.eclipse.tools.promato.ui.views.OrganizeManifestsView"
-          icon="icons/header.png"
-          id="com.aljoschability.tools.mforg.ui.views.OrganizeManifestsView"
-          name="Manifest Organization"
-          restorable="true">
-    </view>
     <e4view
           allowMultiple="false"
           category="org.eclipse.pde.ui"
-          class="com.aljoschability.eclipse.tools.promato.ui.parts.BuhemaPart"
+          class="com.aljoschability.eclipse.tools.promato.ui.parts.OrganizeManifestsView"
           icon="icons/header.png"
-          id="com.aljoschability.eclipse.tools.bumauni.ui.parts.BumauniPart"
-          name="Headers"
+          id="com.aljoschability.tools.mforg.ui.views.OrganizeManifestsView"
+          name="Maintainance"
           restorable="true">
     </e4view>
  </extension>

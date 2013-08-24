@@ -1,4 +1,4 @@
-package com.aljoschability.eclipse.tools.promato.ui.views;
+package com.aljoschability.eclipse.tools.promato.ui.parts;
 
 import com.aljoschability.eclipse.tools.promato.simple.data.Manifest
 import com.aljoschability.eclipse.tools.promato.ui.Images
@@ -40,6 +40,10 @@ import org.eclipse.ui.IViewSite
 import org.eclipse.ui.PartInitException
 import org.eclipse.ui.model.WorkbenchContentProvider
 import org.eclipse.ui.part.ViewPart
+import org.eclipse.ui.actions.WorkspaceModifyOperation
+import org.eclipse.core.runtime.IProgressMonitor
+import java.lang.reflect.InvocationTargetException
+import org.eclipse.jface.dialogs.ProgressMonitorDialog
 
 public class OrganizeManifestsView extends ViewPart {
 	private Composite mainComposite;
@@ -62,31 +66,26 @@ public class OrganizeManifestsView extends ViewPart {
 		allHeaders = newArrayList()
 		projectHeaders = newLinkedHashMap()
 
-		projectListener = new IResourceChangeListener() {
-			override resourceChanged(IResourceChangeEvent event) {
-				if (ResourcesPlugin.getWorkspace().equals(event.getSource())) {
-					var refresh = false
-					for (IResourceDelta delta : event.getDelta().getAffectedChildren()) {
-						if (delta.getResource() instanceof IProject &&
-							ProjectUtil.hasManifest(delta.getResource() as IProject)) {
-							refresh = true;
+		projectListener = [ event |
+			if (ResourcesPlugin::workspace == event.source) {
+				var refresh = false
+				for (IResourceDelta delta : event.delta.affectedChildren) {
+					if (delta.resource instanceof IProject &&
+						ProjectUtil.hasManifest(delta.getResource() as IProject)) {
+						refresh = true;
 
-						//XXX: break;
-						}
-					}
-					if (refresh && projectsViewer != null && !projectsViewer.getTable().isDisposed()) {
-						projectsViewer.getTable().getDisplay().asyncExec(
-							new Runnable() {
-								override run() {
-
-									// projectsViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-									projectsViewer.refresh();
-								}
-							});
+					//XXX: break;
 					}
 				}
+				if (refresh && projectsViewer != null && !projectsViewer.control.disposed) {
+					projectsViewer.control.display.asyncExec(
+						[ |
+							// projectsViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
+							projectsViewer.refresh();
+						])
+				}
 			}
-		};
+		]
 	}
 
 	override createPartControl(Composite parent) {
@@ -284,10 +283,22 @@ public class OrganizeManifestsView extends ViewPart {
 
 			manifest.sort(allHeaders);
 			try {
-				ManifestUtil.write(project, manifest);
+				val operation = new WorkspaceModifyOperation() {
+					override protected execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
+						ManifestUtil.write(project, manifest)
+					}
+				}
+
+				new ProgressMonitorDialog(shell).run(true, false, operation)
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}
+		}
+	}
+
+	def getShell() {
+		if (mainComposite != null) {
+			return mainComposite.shell
 		}
 	}
 
