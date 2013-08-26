@@ -29,17 +29,16 @@
 		<module>bundles/com.aljoschability.eclipse.tools.promato</module>
 		<module>bundles/com.aljoschability.eclipse.tools.promato.ui</module>
 		<!-- features -->
-		<module>features\com.aljoschability.eclipse.tools.edogen.feature</module>
-		<module>features\com.aljoschability.eclipse.tools.madowedi.feature</module>
-		<module>features\com.aljoschability.eclipse.tools.promato.feature</module>
+		<module>features/com.aljoschability.eclipse.tools.edogen.feature</module>
+		<module>features/com.aljoschability.eclipse.tools.madowedi.feature</module>
+		<module>features/com.aljoschability.eclipse.tools.promato.feature</module>
 		<!-- repository -->
-		<module>repositories\com.aljoschability.eclipse.tools.repository</module>
+		<module>repositories/com.aljoschability.eclipse.tools.repository</module>
 		<!-- tests -->
 		<!--
 		<module>tests\com.aljoschability.eclipse.tools.edogen.tests</module><module>tests\com.aljoschability.eclipse.tools.madowedi.tests</module><module>tests\com.aljoschability.eclipse.tools.promato.tests</module>-->
 	</modules>
 	<repositories>
-		<!-- add eclipse luna repository to resolve basic dependencies -->
 		<repository>
 			<id>eclipse-luna</id>
 			<layout>p2</layout>
