@@ -7,7 +7,6 @@ Bundle-ClassPath: .
 Bundle-Vendor: Aljoschability
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore.xcore.lib,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy

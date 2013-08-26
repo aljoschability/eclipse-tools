@@ -6,11 +6,11 @@ Bundle-Version: 0.2.0.qualifier
 Bundle-Vendor: Aljoschability
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.core.resources,
- org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
  org.eclipse.ui,
  org.eclipse.ui.ide,
- org.eclipse.xtend.lib,
+ org.eclipse.xtext.xbase.lib,
  com.aljoschability.eclipse.core.runtime,
  com.aljoschability.eclipse.core.ui,
  com.aljoschability.eclipse.tools.promato
