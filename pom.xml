@@ -27,9 +27,11 @@
 		<module>repositories\com.aljoschability.eclipse.tools.repository</module>
 
 		<!-- tests -->
+		<!--
 		<module>tests\com.aljoschability.eclipse.tools.edogen.tests</module>
 		<module>tests\com.aljoschability.eclipse.tools.madowedi.tests</module>
 		<module>tests\com.aljoschability.eclipse.tools.promato.tests</module>
+		-->
 	</modules>
 	<repositories>
 		<!-- add eclipse luna repository to resolve basic dependencies -->
@@ -37,6 +39,11 @@
 			<id>eclipse-luna</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/luna</url>
+		</repository>
+		<repository>
+			<id>eclipse-license</id>
+			<url>http://download.eclipse.org/cbi/updates/license/</url>
+			<layout>p2</layout>
 		</repository>
 	</repositories>
 	<build>
