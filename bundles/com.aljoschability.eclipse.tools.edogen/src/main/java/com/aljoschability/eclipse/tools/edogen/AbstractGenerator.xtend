@@ -33,7 +33,7 @@ abstract class AbstractGenerator implements Generator {
 		if (!value) {
 			var parent = element.eContainer
 			if (parent instanceof EModelElement) {
-				value = isRecursiveTrue(parent as EModelElement, key)
+				value = isRecursiveTrue(parent, key)
 			}
 		}
 		return value
