@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Tests
+Bundle-Name: %bundle.name
 Bundle-SymbolicName: com.aljoschability.eclipse.tools.madowedi.tests
 Bundle-Version: 0.2.0.qualifier
-Bundle-Vendor: Aljoschability
+Bundle-Vendor: %bundle.vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: com.google.guava,
  org.eclipse.xtend.lib,
