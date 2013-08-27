@@ -16,14 +16,15 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 
 import com.aljoschability.core.ui.PartAdapter;
-import com.aljoschability.eclipse.tools.mumade.impl.ParserImpl;
+import com.aljoschability.eclipse.tools.madowedi.MarkdownParser;
 import com.aljoschability.eclipse.tools.mumade.ui.editors.MarkdownEditor;
 
 public class PreviewPart extends ViewPart {
 	public class EditorDocumentListener implements IDocumentListener {
 		@Override
 		public void documentChanged(DocumentEvent event) {
-			String text = new ParserImpl().test(event.getDocument().get());
+			new MarkdownParser().parse(event.getDocument().get());
+			String text = "<not implemented>";
 			browser.setText(text);
 		}
 

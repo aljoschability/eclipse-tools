@@ -9,7 +9,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.xbase.lib,
  com.aljoschability.eclipse.core.runtime
-Bundle-Activator: com.aljoschability.eclipse.tools.mumade.Activator
-Export-Package: com.aljoschability.eclipse.tools.mumade,
- com.aljoschability.eclipse.tools.mumade.impl
+Bundle-Activator: com.aljoschability.eclipse.tools.madowedi.Activator
+Export-Package: com.aljoschability.eclipse.tools.madowedi
 
