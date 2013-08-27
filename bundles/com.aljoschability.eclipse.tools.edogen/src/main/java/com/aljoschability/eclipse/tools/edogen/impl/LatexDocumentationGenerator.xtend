@@ -25,9 +25,24 @@ import org.eclipse.xtend2.lib.StringConcatenation
  * </ul>
  */
 class LatexDocumentationGenerator extends AbstractGenerator {
+	val Collection<String> labels = newLinkedHashSet
+
+	def static private String getLabel(EModelElement element) {
+		val prefix = "api"
+		val uri = EcoreUtil::getURI(element)
+
+		return prefix + uri
+
+	//"api:" + (uri.lastSegment + uri.fragment).replace("/", ":")
+	}
+
 	val TEXT_EXTENDS = "extends"
 
 	def title(Object e) {
+		if (e instanceof EModelElement) {
+			println(e.label)
+		}
+
 		switch e {
 			EPackage case e.ESuperPackage == null: '''Package \texttt{«e.escaped_name»}'''
 			EPackage: {
@@ -88,7 +103,7 @@ class LatexDocumentationGenerator extends AbstractGenerator {
 		}
 
 		// generate it
-		var StringConcatenation result = new StringConcatenation;
+		var StringConcatenation result = new StringConcatenation
 		for (pack : elements) {
 			if (!pack.hidden) {
 				result.append(generate(pack))
@@ -109,22 +124,25 @@ class LatexDocumentationGenerator extends AbstractGenerator {
 		}
 	}
 
-	def generate(EPackage pack) '''
-		\section{«pack.title»}
-		\label{«pack.reference»}
-		«pack.documentation»
-		\begin{description}
-		\item[Namespace] \texttt{«pack.nsURI»}
-		«IF !pack.name.equals(pack.nsPrefix)»
-			\item[Prefix] \texttt{«pack.nsPrefix»}
-		«ENDIF»
-		\end{description}
-		«FOR c : pack.EClassifiers»
-			«IF !c.hidden»
-				«create(c)»
+	def generate(EPackage pack) {
+		labels += pack.reference
+		return '''
+			\section{«pack.title»}
+			\label{«pack.reference»}
+			«pack.documentation»
+			\begin{description}
+			\item[Namespace] \texttt{«pack.nsURI»}
+			«IF !pack.name.equals(pack.nsPrefix)»
+				\item[Prefix] \texttt{«pack.nsPrefix»}
 			«ENDIF»
-		«ENDFOR»
-	'''
+			\end{description}
+			«FOR c : pack.EClassifiers»
+				«IF !c.hidden»
+					«create(c)»
+				«ENDIF»
+			«ENDFOR»
+		'''
+	}
 
 	def create(EClassifier c) {
 		switch c {
