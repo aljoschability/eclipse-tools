@@ -1,3 +1,12 @@
+@GenModel(modelPluginVariables="",
+	updateClasspath="false",
+	pluginKey="",
+	bundleManifest="false",
+	oSGiCompatible="true",
+	complianceLevel="7.0")
+@Ecore(
+	nsURI="http://www.aljoschability.com/eclipse/tools/promato/2013"
+)
 package com.aljoschability.eclipse.tools.promato
 
 class Manifest {
